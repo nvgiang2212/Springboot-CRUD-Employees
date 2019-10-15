@@ -5,7 +5,10 @@ import javax.persistence.*;
 @Entity
 @Table(name = "employees")
 public class Employee {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
+
     private String firstname;
     private String lastname;
     private String emailId;
@@ -21,8 +24,6 @@ public class Employee {
         this.emailId = emailId;
     }
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     public long getId() {
         return id;
     }
