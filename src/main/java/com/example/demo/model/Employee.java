@@ -9,53 +9,54 @@ public class Employee {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
-    private String firstname;
-    private String lastname;
-    private String emailId;
+    private String firstName;
+    private String lastName;
+    private String email;
 
     public Employee() {
 
     }
 
-    public Employee(long id, String firstname, String lastname, String emailId) {
-        this.id = id;
-        this.firstname = firstname;
-        this.lastname = lastname;
-        this.emailId = emailId;
+    public Employee(String firstName, String lastName, String email) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
     }
 
     public long getId() {
         return id;
     }
-
     public void setId(long id) {
         this.id = id;
     }
 
     @Column(name = "first_name", nullable = false)
-    public String getFirstname() {
-        return firstname;
+    public String getFirstName() {
+        return firstName;
     }
-
-    public void setFirstname(String firstname) {
-        this.firstname = firstname;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
     @Column(name = "last_name", nullable = false)
-    public String getLastname() {
-        return lastname;
+    public String getLastName() {
+        return lastName;
     }
-
-    public void setLastname(String lastname) {
-        this.lastname = lastname;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
     @Column(name = "email_address", nullable = false)
     public String getEmailId() {
-        return emailId;
+        return email;
+    }
+    public void setEmailId(String email) {
+        this.email = email;
     }
 
-    public void setEmailId(String emailId) {
-        this.emailId = emailId;
+    @Override
+    public String toString() {
+        return "Employee [id=" + id + ", firstName=" + firstName + ", " +
+                "lastName=" + lastName + ", emailId=" + email + "]";
     }
 }
